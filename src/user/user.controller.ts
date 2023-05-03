@@ -23,7 +23,7 @@ export class UserController {
     return this.userService.create(createUserDto);
   }
 
- @ApiOperation({ summary: 'Retorna uma lista de todos os usuários cadastrados.' })
+  @ApiOperation({ summary: 'Retorna uma lista de todos os usuários cadastrados.' })
   @ApiOkResponse({ description: 'A lista de usuários.', type: [CreateUserDto] })
   @Get()
   async findAll(): Promise<User[]> {

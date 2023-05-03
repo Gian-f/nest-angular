@@ -3,6 +3,14 @@ import { IsDate, IsEmail, IsString, Matches, MaxLength, MinLength } from 'class-
 
 export class CreateUserDto {
   @ApiProperty({
+    example: 'John Doe',
+    description: 'O nome do usuário',
+  })
+
+  @IsString()
+  name: string;
+
+  @ApiProperty({
     example: 'johndoe@example.com',
     description: 'O email do usuário',
   })
@@ -10,13 +18,6 @@ export class CreateUserDto {
   @IsEmail()
   email: string;
 
-  @ApiProperty({
-    example: 'John Doe',
-    description: 'O nome do usuário',
-  })
-
-  @IsString()
-  name: string;
 
   @ApiProperty({
     example: '(11) 99999-9999',
